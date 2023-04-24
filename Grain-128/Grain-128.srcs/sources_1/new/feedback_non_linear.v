@@ -31,6 +31,6 @@ module feedback_non_linear
     output nfb
 );
 
-assign nfb = b0 ^ b26 ^ b56 ^ b91 ^ b96 ^ (b3 & b67) ^ (b11 & b13) ^ (b17 & b18) ^ (b27 & b59) ^ (b40 & b68) ^ (b61 & b65) ^ (b68 & b84); 
+assign nfb = b0 ^ b26 ^ b56 ^ b91 ^ b96 ^ (b3 & b67) ^ (b11 & b13) ^ (b17 & b18) ^ (b27 & b59) ^ (b40 & b48) ^ (b61 & b65) ^ (b68 & b84); 
 
 endmodule
