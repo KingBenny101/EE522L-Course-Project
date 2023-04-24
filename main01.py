@@ -93,6 +93,7 @@ class NFSR:
             self.REGISTER[127] = feedback ^ output
         else:
             self.REGISTER[127] = feedback
+     
 
     def _feedback(self, si0) -> int:
         """
