@@ -1,4 +1,4 @@
-# Python Codes
+# Python Implementation of Grain Algorithms
 
 ## main00.py
 
