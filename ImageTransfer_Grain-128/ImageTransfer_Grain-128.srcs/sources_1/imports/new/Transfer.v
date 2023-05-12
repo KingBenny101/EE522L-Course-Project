@@ -10,7 +10,7 @@ module Transfer #(
     input reset,
     input [7:0] bram_data,
     output reg done,
-    output [16:0] bram_addr,
+    output reg [16:0] bram_addr,
     output tx_out
 );
 

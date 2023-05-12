@@ -53,7 +53,7 @@ always @(posedge clk) begin
         GEN: begin
             key_stream <= {key_stream[N-2:0] ,z};
             i <= i + 1;
-            if(i == N ) begin
+            if(i == N) begin
                 mode <= DONE;
                 gen <= 0;
                 out <= in ^ key_stream;
@@ -66,3 +66,4 @@ always @(posedge clk) begin
 end
 
 endmodule
+

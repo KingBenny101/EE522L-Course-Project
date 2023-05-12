@@ -22,7 +22,7 @@
 
 module TB_Encrypt();
 
-parameter N = 128;
+parameter N = 800;
 
 reg clk = 0;
 reg reset = 0;

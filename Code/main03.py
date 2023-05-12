@@ -28,6 +28,9 @@ def convert(s):
 
 
 class Grain128:
+    """
+        Grain 128 implementation in python
+    """
     def __init__(self, key, iv) -> None:
         self.lsfr = np.zeros(128, dtype=np.uint8)
         self.nsfr = np.zeros(128, dtype=np.uint8)
@@ -147,13 +150,13 @@ class Grain128:
 
 
 def main():
-    # iv = int("000000000000000000000000",16)
-    # key = int("00000000000000000000000000000000",16)
+    iv = int("000000000000000000000000",16)
+    key = int("00000000000000000000000000000000",16)
 
-    iv = int("0123456789abcdef12345678", 16)
-    key = int("0123456789abcdef123456789abcdef0", 16)
+    # iv = int("0123456789abcdef12345678", 16)
+    # key = int("0123456789abcdef123456789abcdef0", 16)
 
-    l = 128
+    l = 800
     grain = Grain128(key, iv)
     keystream = grain._generate(l)
     print("Keystream: ")

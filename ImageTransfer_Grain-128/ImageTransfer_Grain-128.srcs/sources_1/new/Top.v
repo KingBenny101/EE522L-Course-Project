@@ -10,6 +10,7 @@
 module Top
 (
     input clk,
+    input start,
     input rst,
     output reg done,
     output tx_out
@@ -34,7 +35,7 @@ wire [16:0] bram_addr;
 wire [7:0] bram_data;
 
 Transfer T0 (clk,transfer_start,rst,bram_data,transfer_done,bram_addr,tx_out);
-Encrypt E0 (clk,process_start,rst,bram_addr,bram_data,process_done);
+PROCESS E0 (clk,process_start,rst,bram_addr,bram_data,process_done);
 
 always @(posedge clk ) begin
 
@@ -49,7 +50,8 @@ case (curr_state)
     IDLE : begin
         process_start <= 0;
         transfer_start <= 0;
-        if(!rst) begin
+        done <= 0;
+        if(!rst && start) begin
             next_state <= PROCESS;
         end
     end

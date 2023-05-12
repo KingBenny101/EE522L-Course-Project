@@ -147,11 +147,11 @@ class Grain128:
 
 
 def main():
-    # iv = convert("000000000000000000000000")
-    # key = convert("00000000000000000000000000000000")
+    iv = convert("000000000000000000000000")
+    key = convert("00000000000000000000000000000000")
 
-    iv = convert("0123456789abcdef12345678")
-    key = convert("0123456789abcdef123456789abcdef0")
+    # iv = convert("0123456789abcdef12345678")
+    # key = convert("0123456789abcdef123456789abcdef0")
 
     l = 128
     grain = Grain128(key, iv)
