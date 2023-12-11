@@ -29,7 +29,7 @@ module tb_grain128a ();
     
     
     reg [127:0] key = 128'h0;
-    reg [95:0] iv   = 96'h0;
+    reg [95:0] iv   = 96'h800000000000000000000000;
     
     
     localparam N = 320;

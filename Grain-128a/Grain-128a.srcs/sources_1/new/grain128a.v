@@ -30,6 +30,8 @@ reg [127:0] b;            //NFSR
 reg [1:0]curr_state = INIT;
 reg [1:0]next_state = INIT;
 reg [7:0] cnt  = 0;              //Counter
+reg [7:0] cnt1  = 0;              //Counter
+
 reg m          = 1;              //Mode
 wire f0,g0,h0;
 wire f1,g1,h1;
@@ -95,18 +97,19 @@ always @(posedge clk) begin
             b = {nfb0, b[127:1]};
         end 
         AUTH_INIT: begin
-            cnt = 0;
+            cnt1 = 0;
             m   <= 0;
             if (iv[0]) begin
-                if (cnt<64) begin
-                    if (cnt<32)
-                        a[cnt] <= y0;
+                cnt1 <= cnt1+1;
+                if (cnt1<64) begin
+                    // if (cnt1<32)
+                    //     a[cnt1] <= y0;
 
-                    else if (cnt<64)
-                        r[cnt-32] <= y0;
+                    // else if (cnt1<64)
+                    //     r[cnt1-32] <= y0;
                     
-                    cnt <= cnt+1;
-                    end
+                
+                end
                 else begin   
                     next_state <= RDY_AUTH;
                 end
